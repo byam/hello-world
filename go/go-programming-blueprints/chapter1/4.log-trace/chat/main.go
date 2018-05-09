@@ -1,4 +1,4 @@
-package chat
+package main
 
 import (
 	"log"
@@ -7,6 +7,10 @@ import (
 	"path/filepath"
 	"sync"
 	"flag"
+	//"os"
+
+	"../../4.log-trace/trace"
+	"os"
 )
 
 // temp1は1つのテンプレートを表します
@@ -30,6 +34,7 @@ func main()  {
 	flag.Parse() // プラグを解釈する
 
 	r := newRoom()
+	r.tracer = trace.New(os.Stdout)
 
 	// ルート
 	http.Handle("/", &templateHandler{filename: "chat.html"})

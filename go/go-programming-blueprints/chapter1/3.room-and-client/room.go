@@ -18,9 +18,6 @@ type room struct {
 
 	// clientsには在室している全てのクライアントが保持されます
 	clients map[*client]bool
-
-	// tracerはチャットルーム上で行われた操作のログを受け取ります。
-	"github.com/byam/hello-world/chapter1/4.log-trace/trace"
 }
 
 func (r *room) run() {

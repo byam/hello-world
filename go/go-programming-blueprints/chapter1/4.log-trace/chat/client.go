@@ -1,7 +1,9 @@
-package chat
+package main
 
 import (
 	"github.com/gorilla/websocket"
+
+	"../../4.log-trace/trace"
 )
 
 // clientはチャットを行っている1人のユーザを表します。
@@ -42,5 +44,6 @@ func newRoom() *room{
 		join:    make(chan *client),
 		leave:   make(chan *client),
 		clients: make(map[*client]bool),
+		tracer: trace.Off(),
 	}
 }
