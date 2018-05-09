@@ -37,6 +37,12 @@ Downloads the packages.
 go get PACKAGE_NAME
 ```
 
+* `test -cover`
+show test coverage
+```bash
+go test -cover
+```
+
 ## Go idioms
 
 ### `defer`
