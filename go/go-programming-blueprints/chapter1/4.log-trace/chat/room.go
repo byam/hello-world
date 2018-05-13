@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"github.com/labstack/gommon/log"
 
-	"../../4.log-trace/trace"
+	"../trace"
 )
 
 type room struct {

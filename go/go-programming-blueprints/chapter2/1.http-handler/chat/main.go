@@ -7,9 +7,8 @@ import (
 	"path/filepath"
 	"sync"
 	"flag"
-	//"os"
 
-	"../../4.log-trace/trace"
+	"../trace"
 	"os"
 )
 
@@ -36,11 +35,11 @@ func main()  {
 	r := newRoom()
 	r.tracer = trace.New(os.Stdout)
 
-	// ルート
-	http.Handle("/", &templateHandler{filename: "chat.html"})
-
-	// ルーム
+	http.Handle("/chat", MustAuth(&templateHandler{filename: "chat.html"}))
+	http.Handle("/login", &templateHandler{filename: "login.html"})
+	http.HandleFunc("/auth/", loginHandler)
 	http.Handle("/room", r)
+
 	// チャットルーム開始する
 	go r.run()
 

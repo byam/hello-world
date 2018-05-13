@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gorilla/websocket"
 
-	"../../4.log-trace/trace"
+	"../trace"
 )
 
 // clientはチャットを行っている1人のユーザを表します。

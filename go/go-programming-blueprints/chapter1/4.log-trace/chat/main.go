@@ -9,7 +9,7 @@ import (
 	"flag"
 	//"os"
 
-	"../../4.log-trace/trace"
+	"../trace"
 	"os"
 )
 

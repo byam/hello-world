@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 	"sync"
 	"flag"
+	"github.com/stretchr/objx"
 )
 
 // temp1は1つのテンプレートを表します
@@ -21,7 +22,15 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	t.once.Do(func() {
 		t.temp1 = template.Must(template.ParseFiles(filepath.Join("templates", t.filename)))
 	})
-	t.temp1.Execute(w, r)
+
+	data := map[string]interface{}{
+		"Host": r.Host,
+	}
+	if authCookie, err := r.Cookie("auth"); err == nil {
+		data["UserData"] = objx.MustFromBase64(authCookie.Value)
+	}
+
+	t.temp1.Execute(w, data)
 }
 
 func main()  {
