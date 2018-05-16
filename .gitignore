@@ -1,2 +1,7 @@
 
-# go binary
+# Common
+*.iml
+
+# Java & Maven
+
+*target/
