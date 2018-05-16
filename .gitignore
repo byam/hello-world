@@ -5,3 +5,6 @@
 # Java & Maven
 
 *target/
+
+# Go binary
+*bin/
