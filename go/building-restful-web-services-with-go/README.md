@@ -6,7 +6,7 @@ Outline:
 - [What is middleware?](#what-is-middleware)
 - [What is RPC?](#what-is-rpc)
 - [What is a proxy server?](#what-is-a-proxy-server)
-- [JSON Web Tokens](json-web-tokens)
+- [JSON Web Tokens](#json-web-tokens)
 - [Tips](#tips)
 
 ## Resource
