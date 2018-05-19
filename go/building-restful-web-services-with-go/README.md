@@ -3,7 +3,7 @@
 Outline:
 - [Resource](#resource)
 - [Types of status codes](#types-of-status-codes)
-- [What is middleware?](#what-is-middleware?)
+- [What is middleware?](#what-is-middleware)
 - [What is RPC?](#what-is-rpc)
 - [What is a proxy server?](#what-is-a-proxy-server)
 - [JSON Web Tokens](json-web-tokens)
