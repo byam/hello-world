@@ -1,5 +1,12 @@
 # Building RESTful Web services with Go
 
+Outline:
+- [Resource](#resource)
+- [Types of status codes](#types-of-status-codes)
+- [What is middleware?](#what-is-middleware?)
+- [What is RPC?](#what-is-rpc?)
+- [Tips](#tips)
+
 ## Resource
 - [Book](https://www.packtpub.com/application-development/building-restful-web-services-go?utm_source=github&utm_medium=repository&utm_campaign=9781788294287)
 - [Codes](https://github.com/PacktPublishing/Building-RESTful-Web-Services-with-Go)
@@ -39,6 +46,40 @@ These are the errors from the server. The client request may be perfect, but due
 
 For more details on status codes, visit this link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
+## What is middleware?
+
+Middleware is an entity that hooks into a server's request/response processing.
+So virtually all middleware should perform these functions in order:
+
+1.Process the request before hitting the handler (function)
+2.Process the handler function
+3.Process the response before giving it to the client
+
+![middleware](static/middleware.png)
+
+The most common use cases are:
+
+- Use a logger to log each and every request hitting the REST API
+- Validate the session of the user and keep the communication alive
+- Authenticate the user, if not identified
+- Write custom logic to scrap the request data
+- Attach properties to responses while serving the client
+
+## What is RPC?
+Remote Procedure Call (RPC) is an interprocess communication that exchanges information between various distributed systems. 
+A computer called Alice can call functions (procedures) in another computer called Bob in protocol format and can get the computed result back. 
+Without implementing the functionality locally, we can request things from a network that lies in another place or geographical region.
+
+The entire process can be broken down into the following steps:
+
+- Clients prepare function name and arguments to send
+- Clients send them to an RPC server by dialing the connection
+- The server receives the function name and arguments
+- The server executes the remote process
+- The message will be sent back to the client
+- The client collects the data from the request and uses it appropriately
+
+![middleware](static/rpc.png)
 
 
 ## Tips
