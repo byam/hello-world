@@ -1,0 +1,7 @@
+## Build & Run
+
+```bash
+# show my all repos
+go run getRepos.go
+2018/05/19 22:47:15 [{70332636 Algo1 byam/Algo1 0 false} {70332668 Algo2 byam/Algo2 0 false} {71384696 algs4 byam/algs4 0 false} {73834439 AtCoder byam/AtCoder 0 false} {128896404 beam byam/beam 0 false} {134024027 Building-RESTful-Web-Services-with-Go byam/Building-RESTful-Web-Services-with-Go 0 false} {108001209 byam.github.io byam/byam.github.io 0 false} {79648433 DataflowJavaSDK byam/DataflowJavaSDK 0 false} {74592946 devops-intro-project byam/devops-intro-project 0 false} {100398967 dlnd byam/dlnd 0 false} {88323604 example-voting-app byam/example-voting-app 0 false} {133896778 Go-Web-Development-Cookbook byam/Go-Web-Development-Cookbook 0 false} {132543474 hello-world byam/hello-world 0 false} {31782590 it-articles byam/it-articles 1 false} {133221320 jsonschema2pojo byam/jsonschema2pojo 0 false} {102710446 memo byam/memo 0 false} {75848409 MOOCTextEditor byam/MOOCTextEditor 0 false} {43702296 predictEPL byam/predictEPL 0 false} {71094995 procon-study-group byam/procon-study-group 0 false} {72562715 programming byam/programming 1 false} {73769152 programming-ebooks byam/programming-ebooks 0 false} {43607937 Programming-Notes byam/Programming-Notes 1 false} {70410316 tensorflow byam/tensorflow 0 false} {75847594 UCSDGraphs byam/UCSDGraphs 0 false} {75848796 UCSDUnfoldingMaps byam/UCSDUnfoldingMaps 0 false} {73569823 ud615 byam/ud615 0 false} {75314019 ud858 byam/ud858 0 false} {75319465 ud859 byam/ud859 0 false}]
+```
