@@ -5,6 +5,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"fmt"
 )
 
 //Compile templates on start
@@ -45,6 +46,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 			//create destination file making sure the path is writeable.
+			fmt.Printf("filen name: %v", files[i].Filename)
 			dst, err := os.Create("files/" + files[i].Filename)
 			defer dst.Close()
 			if err != nil {

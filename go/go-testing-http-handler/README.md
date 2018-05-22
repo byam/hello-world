@@ -3,7 +3,7 @@
 ## Test
 
 ```bash
-go test main.go main_test.go -v
+go test  -v
 === RUN   TestCheckStatusOK
 --- PASS: TestCheckStatusOK (0.00s)
 === RUN   TestStatusNotFound
