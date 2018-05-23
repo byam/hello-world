@@ -1,5 +1,4 @@
-package com.bean_utils;
-
+package com.bean_utils.dynabeans;
 
 import org.apache.commons.beanutils.BasicDynaClass;
 import org.apache.commons.beanutils.DynaBean;
@@ -7,9 +6,10 @@ import org.apache.commons.beanutils.DynaClass;
 import org.apache.commons.beanutils.DynaProperty;
 
 public class DynaBeanExample {
+
     private final String NR_OF_WHEELS = "numberOfWheels";
 
-    private void runExample() throws InstantiationException, IllegalAccessException {
+    private void runExample() throws IllegalAccessException, InstantiationException {
 
         DynaClass dynaClass = new BasicDynaClass("Car", null,
                 new DynaProperty[] {
@@ -21,9 +21,9 @@ public class DynaBeanExample {
         System.out.println("Number of wheels: " + car.get(NR_OF_WHEELS));
         System.out.println("DynaBean is instance of DynaClass: " + car.getDynaClass().getName());
 
-
     }
-    public static void main(String[] args) throws IllegalAccessException, InstantiationException {
+
+    public static void main(String[] args) throws InstantiationException, IllegalAccessException {
         DynaBeanExample ac = new DynaBeanExample();
         ac.runExample();
     }
