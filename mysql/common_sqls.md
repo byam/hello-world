@@ -33,3 +33,15 @@ mysql> SELECT * FROM mytable;
        | user3 |   13 | 2018-05-13 04:23:03 |
        +-------+------+---------------------+
 ```
+
+## Create Database
+
+```sql
+CREATE DATABASE IF NOT EXISTS DBName;
+
+
+CREATE TABLE euc_mp.j_rsv (
+  rsv_no VARCHAR(32),
+  yad_no VARCHAR(32)
+  );
+```

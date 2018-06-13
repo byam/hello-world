@@ -5,6 +5,18 @@
 - [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
 - [Introduction to the Maven Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 
+## Install
+
+### Ubuntu
+
+```bash
+# install
+$ sudo apt-get install maven
+
+# check
+$ mvn --version
+```
+
 ## Create Simple Project
 
 * Create Simple Project
@@ -65,4 +77,3 @@ Hello World!
 cd my-app
 mvn compile exec:java -Dexec.mainClass=com.my.app.App
 ```
-

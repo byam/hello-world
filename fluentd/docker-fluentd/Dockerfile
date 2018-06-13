@@ -14,23 +14,17 @@ RUN apk --update add --no-cache --virtual .build-deps build-base ruby-dev
 # Work path
 WORKDIR /scripts
 
-# Creating user Fluentd
-RUN addgroup fluentd && \
-        adduser -s /bin/false -G fluentd -S -D fluentd
-
-# Installing Fluentd + plugins S3 & ES
+# Installing Fluentd + plugins
 RUN echo 'gem: --no-document' >> /etc/gemrc && \
         gem install oj && \
         gem install json && \
         gem install fluentd -v ${FLUENTD_VERSION} && \
-        gem install fluent-plugin-s3 && \
-        gem install fluent-plugin-elasticsearch && \
         gem install fluent-plugin-record-reformer && \
         apk del .build-deps
 
-RUN echo "Hello Byam" > /var/log/fluentd_test.log
-RUN mkdir /var/log/fluentd
+# Coping config
+COPY ./files/in_http_out_stdout.conf /etc/fluentd/in_http_out_stdout.conf
 
-# Coping config & scripts
-COPY ./files/in_docker.conf /etc/fluentd/in_docker.conf
-COPY ./scripts/start.sh start.sh
+EXPOSE 8888
+
+CMD [ "fluentd", "-c", "/etc/fluentd/in_http_out_stdout.conf"]
