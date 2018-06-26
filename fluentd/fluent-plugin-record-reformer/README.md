@@ -1,0 +1,29 @@
+## Resource
+
+- https://github.com/sonots/fluent-plugin-record-reformer
+
+## Deploy
+
+* Build docker image
+```bash
+docker build -t byam/alpine-fluentd .
+```
+
+* Run container
+```
+docker run -p 8888:8888 byam/alpine-fluentd
+```
+
+* New terminal (for client side)
+```bash
+curl -i -X POST -d 'json={"action":"login","user":2}' http://localhost:8888/test.cycle
+```
+
+* For `Filter` example
+```bash
+# accepted event
+curl -i -X POST -d 'json={"action":"login","user":2}' http://localhost:8888/test.cycle
+
+# rejected event
+curl -i -X POST -d 'json={"action":"logout","user":2}' http://localhost:8888/test.cycle
+```

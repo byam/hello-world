@@ -1,0 +1,16 @@
+tns_euc_jlncbi =
+  (DESCRIPTION =
+    (ENABLE = BROKEN)
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 172.17.14.208)(PORT = 15030))
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 172.17.14.211)(PORT = 15030))
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 172.17.14.209)(PORT = 15030))
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 172.17.14.210)(PORT = 15030))
+      (LOAD_BALANCE = OFF)
+      (FAILOVER = ON)
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = svc_jlncbi)
+      (SERVER = DEDICATED)
+    )
+  )
