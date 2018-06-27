@@ -3,6 +3,7 @@
 Resources:
 - [Registering Object Changes](https://cloud.google.com/storage/docs/reporting-changes)
 - [Cloud Pub/Sub Notifications for Cloud Storage](https://cloud.google.com/storage/docs/pubsub-notifications)
+- [Configure object change notification](https://cloud.google.com/storage/docs/gsutil/commands/notification)
 
 Set up and use Cloud Pub/Sub Notifications for Cloud Storage.
 
@@ -11,7 +12,7 @@ Set up and use Cloud Pub/Sub Notifications for Cloud Storage.
 gcloud config set project [PROJECT_NAME]
 
 # Applying a notification configuration
-gsutil notification create -t [TOPIC_NAME] -f json gs://[BUCKET_NAME]
+gsutil notification create -t [TOPIC_NAME] -f json -e OBJECT_FINALIZE gs://[BUCKET_NAME]
 
 # Listing notification configurations for a bucket
 gsutil notification list gs://[BUCKET_NAME]
