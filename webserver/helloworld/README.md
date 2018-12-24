@@ -228,6 +228,53 @@ EXPOSE 8080
 CMD node main.js
 ```
 
+## Ruby
+
+以下のように、ソースコードとDockerfileを配置し、上記でのdockerコマンドを実行します。
+
+```bash
+.
+├── Dockerfile
+├── main.rb
+```
+
+#### ソースコード
+`main.rb`:
+
+```ruby
+const http = require('http');
+require 'socket'
+
+message = "Merry Christmas! (ruby)"
+
+server = TCPServer.new 8080
+loop do
+  client = server.accept
+
+  client.puts "HTTP/1.0 200 OK"
+  client.puts "Content-Type: text/plain"
+  client.puts
+  client.puts message
+  client.close
+end
+```
+
+#### Dockerfile
+```dockerfile
+FROM ruby:2.5-alpine
+
+ENV DIR=/work
+
+COPY main.rb ${DIR}/main.rb
+
+WORKDIR ${DIR}
+
+EXPOSE 8080
+
+CMD ruby main.rb
+```
+
+
 ##おわりに
 
 上記を比べてみてどうでしょうか？　それぞれの良さがちょっとだけでも見えたら幸いです。
