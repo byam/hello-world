@@ -6,7 +6,7 @@ import (
 "net/http"
 )
 
-var greeting  = "Merry Christmas!"
+var greeting  = "Merry Christmas! (go)"
 
 func myHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, greeting)

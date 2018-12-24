@@ -7,7 +7,7 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 
 class Main {
-    static final String GREETING = "Merry Christmas!";
+    static final String GREETING = "Merry Christmas! (java)";
 
     public static void main (String args[]) throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);

@@ -1,7 +1,7 @@
 import http.server
 import socketserver
 
-GREETING = "Merry Christmas!"
+GREETING = "Merry Christmas! (python3)"
 
 class MyHandler(http.server.SimpleHTTPRequestHandler):
 	def do_GET(self):
