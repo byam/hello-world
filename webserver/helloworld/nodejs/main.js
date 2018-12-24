@@ -4,8 +4,8 @@ const port = 8080;
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
-res.setHeader('Content-Type', 'text/plain');
-res.end('Merry Christmas! (nodejs)\n');
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Merry Christmas! (nodejs)\n');
 });
 
 server.listen(port, () => {
