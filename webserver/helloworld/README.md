@@ -195,7 +195,7 @@ CMD java Main
 ```
 
 #### ソースコード
-`main.java`:
+`main.js`:
 
 ```javascript
 const http = require('http');
