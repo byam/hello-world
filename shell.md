@@ -16,6 +16,12 @@ ref: https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-example
 # case insensetive and exact words
 grep -t -w "the" file
 
+# not contain
+grep -iwv "that" file
+
+# include one of words
+grep -iwE "th(e|at|en|ose)" file
+
 # Match regular expression in files
 $ grep "lines.*empty" demo_file
 ```
