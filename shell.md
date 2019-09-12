@@ -1,4 +1,4 @@
-## `paste`
+## Command: `paste`
 
 ref: http://www.theunixschool.com/2012/07/10-examples-of-paste-command-usage-in.html
 
@@ -23,3 +23,31 @@ Solaris CentOS
 HPUX    OEL
 AIX     Ubuntu
 ```
+
+## Arrays
+
+ref: https://www.thegeekstuff.com/2010/06/bash-array-tutorial/
+
+```sh
+# Search and Replace in an array elements
+
+Unix=('Debian' 'Red hat' 'Ubuntu' 'Suse' 'Fedora' 'UTS' 'OpenLinux');
+
+echo ${Unix[@]/Ubuntu/SCO Unix}
+
+# add element
+Unix=("${Unix[@]}" "AIX" "HP-UX")
+
+# remove element
+unset Unix[3]
+
+# Remove Bash Array Elements using Patterns
+declare -a patter=( ${Unix[@]/Red*/} )
+
+# Concatenation of two Bash Arrays
+UnixShell=("${Unix[@]}" "${Shell[@]}")
+
+# Load Content of a File into an Array
+filecontent=( `cat "logfile" `)
+```
+
