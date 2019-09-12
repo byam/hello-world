@@ -24,6 +24,23 @@ HPUX    OEL
 AIX     Ubuntu
 ```
 
+## Command: `cut`
+
+ref: https://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html
+
+```sh
+# print 4th and 6th characters by position
+cut -c4,6 file.txt
+
+# print 4th to 6th characters by position
+cut -c4-6 file.txt
+
+# display range of fields
+cut -d' ' -f1-3 file.txt
+
+```
+
+
 ## Arrays
 
 ref: https://www.thegeekstuff.com/2010/06/bash-array-tutorial/
