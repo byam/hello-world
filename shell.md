@@ -1,3 +1,62 @@
+Shell Tips
+--
+
+Summary
+* [grep](#command-grep)
+* [awk](#command-awk)
+* [paste](#command-paste)
+* [cut](#command-cut)
+* [Arrays](#arrays)
+
+## Command: `grep`
+
+ref: https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/
+
+```sh
+# case insensetive and exact words
+grep -t -w "the" file
+
+# Match regular expression in files
+$ grep "lines.*empty" demo_file
+```
+
+* Regex
+```
+? The preceding item is optional and matched at most once.
+* The preceding item will be matched zero or more times.
++ The preceding item will be matched one or more times.
+{n} The preceding item is matched exactly n times.
+{n,} The preceding item is matched n or more times.
+{,m} The preceding item is matched at most m times.
+{n,m} The preceding item is matched at least n times, but not more than m times.
+```
+
+## Command: `awk`
+
+* Syntax:
+
+```sh
+awk '/search pattern1/ {Actions}
+     /search pattern2/ {Actions}' file
+```
+
+* Examples
+```sh
+# Print the lines which matches with the pattern.
+awk '/Thomas/ 
+> /Nisha/' employee.txt
+
+# Find the employees who has employee id greater than 200
+awk '$1 >200' employee.txt
+
+# Print the list of employees in Technology department
+awk '$4 ~/Technology/' employee.txt
+
+# A scored an average less than 50 => FAIL Same for B C scored an average between 60 and 80 => B D scored an average between 80 and 90 => A
+awk '{avg=($2+$3+$4)/3; print $0, ":", (avg<50)?"FAIL":(avg<80)?"B":"A"}'
+```
+
+
 ## Command: `paste`
 
 ref: http://www.theunixschool.com/2012/07/10-examples-of-paste-command-usage-in.html
